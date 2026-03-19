@@ -36,9 +36,7 @@ hungry_text = "im hungry..."
 hungry_texts = ["im hungry...", "i need food...", "feed me..."]
 hungry_text_rotation_sec = 8
 persist_file = "/root/.pwnagotchi/nomagotchi_state.json"
-ui_label = "Hunger"
 ui_position = [5, 93]
-bar_width = 5
 ```
 
 3. Restart Pwnagotchi.
@@ -57,9 +55,7 @@ bar_width = 5
 - `hungry_texts`: List of rotating low-hunger phrases (overrides single `hungry_text` if provided)
 - `hungry_text_rotation_sec`: Seconds before switching to another hungry phrase
 - `persist_file`: JSON state file location
-- `ui_label`: Label shown next to the bar
 - `ui_position`: Screen coordinates for the element
-- `bar_width`: Number of characters in the ASCII bar
 
 ## Behavior
 

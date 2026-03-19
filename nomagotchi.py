@@ -7,7 +7,7 @@ from threading import Lock
 
 import pwnagotchi.plugins as plugins
 import pwnagotchi.ui.fonts as fonts
-from pwnagotchi.ui.components import LabeledValue, Text
+from pwnagotchi.ui.components import Text
 from pwnagotchi.ui.view import BLACK
 
 
@@ -30,9 +30,7 @@ class Nomagotchi(plugins.Plugin):
         "hungry_texts": ["im hungry", "need handshakes", "feed me pls"],
         "hungry_text_rotation_sec": 8,
         "persist_file": "/root/.pwnagotchi/nomagotchi_state.json",
-        "ui_label": "NOMA",
         "ui_position": [0, 93],
-        "bar_width": 10,
     }
 
     def __init__(self):
@@ -51,9 +49,7 @@ class Nomagotchi(plugins.Plugin):
         self.hungry_texts = list(self.DEFAULTS["hungry_texts"])
         self.hungry_text_rotation_sec = self.DEFAULTS["hungry_text_rotation_sec"]
         self.persist_file = self.DEFAULTS["persist_file"]
-        self.ui_label = self.DEFAULTS["ui_label"]
         self.ui_position = tuple(self.DEFAULTS["ui_position"])
-        self.bar_width = self.DEFAULTS["bar_width"]
 
         self.feed_count = 0
         self.last_decay_ts = time.time()
@@ -87,8 +83,6 @@ class Nomagotchi(plugins.Plugin):
             opts.get("hungry_text_rotation_sec", self.DEFAULTS["hungry_text_rotation_sec"])
         )
         self.persist_file = opts.get("persist_file", self.DEFAULTS["persist_file"])
-        self.ui_label = str(opts.get("ui_label", self.DEFAULTS["ui_label"]))
-        self.bar_width = int(opts.get("bar_width", self.DEFAULTS["bar_width"]))
 
         position = opts.get("ui_position", self.DEFAULTS["ui_position"])
         if isinstance(position, (list, tuple)) and len(position) == 2:
@@ -102,7 +96,6 @@ class Nomagotchi(plugins.Plugin):
         self.warn_threshold = self._clamp(self.warn_threshold, 0, self.max_hunger)
         self.feed_text_duration_sec = max(1, self.feed_text_duration_sec)
         self.hungry_text_rotation_sec = max(1, self.hungry_text_rotation_sec)
-        self.bar_width = max(3, self.bar_width)
 
         # Backward compatibility: if hungry_texts is unset, use hungry_text.
         if not self.hungry_texts:
