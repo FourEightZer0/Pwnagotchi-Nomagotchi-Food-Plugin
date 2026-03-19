@@ -1,6 +1,8 @@
 ![Screenshot](Screenshot.png)
 ![Screenshot](Screenshot2.png)
 
+This plugin is designed to work with jayofelony Pwnagotchi 2.9.5.4
+
 # Nomagotchi
 
 A Pwnagotchi plugin that adds a hunger bar and feeds it when handshakes are captured.
