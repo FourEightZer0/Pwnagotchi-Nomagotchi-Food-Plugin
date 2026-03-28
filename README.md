@@ -70,3 +70,10 @@ ui_position = [5, 93]
 
 - This plugin uses the plugin callback `on_handshake`, so feeding is based on successful handshake captures.
 - If you already use the same UI position with another plugin, change `ui_position` to avoid overlap.
+
+Check out my other plugins
+- Pwnagotchi-Nomagotchi-Food-Plugin
+- Pwnagotchi-TrashTalk-Custom-Phrases-Plugin
+- Pwnagotchi-EXPv3-Plugin
+- Pwnagotchi-WebSSH-Plugin
+https://github.com/FourEightZer0
